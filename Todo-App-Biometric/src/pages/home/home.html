@@ -1,0 +1,40 @@
+<ion-header>
+  <ion-navbar>
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>Todo List App</ion-title>
+    <ion-fab bottom right>
+      <button (click)="addTodo()" ion-fab mini>
+        <ion-icon name="add"></ion-icon>
+      </button>
+      </ion-fab>
+  </ion-navbar>
+</ion-header>
+
+
+
+<ion-content padding>
+  <div *ngFor="let item of data; let i=index ; ">	
+		<ion-card>
+			<ion-card-header>
+				<p style="text-align: right;">
+					<ion-icon name="create" (click)="showmodal(item)"></ion-icon>
+					<ion-icon name="trash" (click)="delete(item,i)"></ion-icon>
+				</p>	
+				{{item.todoHeading}}
+			</ion-card-header>
+
+			<ion-card-content>
+				{{item.todoData}}
+			</ion-card-content>
+		</ion-card>
+	</div>
+</ion-content>
+<ion-footer>
+    <ion-toolbar>
+      <ion-title>Imtiaz Kapatrala.</ion-title>
+    </ion-toolbar>
+  </ion-footer>
+
+
